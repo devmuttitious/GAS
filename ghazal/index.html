@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gas - Ghzal</title>
+    <title>Abbass Saghar - Ghzal</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -438,9 +438,9 @@
         }
     </style>
 
-    <link rel="icon" href="./../wp-content/uploads/2024/10/Screenshot_2024-10-17_021431-removebg-preview.png"
+    <link rel="icon" href="/assets/logo/logo-1.png"
         sizes="32x32">
-    <link rel="icon" href="./../wp-content/uploads/2024/10/Screenshot_2024-10-17_021431-removebg-preview.png"
+    <link rel="icon" href="/assets/logo/logo-1.png"
         sizes="192x192">
     <link rel="apple-touch-icon"
         href="./../wp-content/uploads/2024/10/Screenshot_2024-10-17_021431-removebg-preview.png">
@@ -746,7 +746,7 @@
     background-color: #fcb900;        /* Button background color */
     color: #fff;                      /* Icon color */
     border: none;
-    padding: 5px 10px;
+    padding: 5px 2rem 5px 2rem;
     margin: 10px 50px;
     border-radius: 5px;
     font-size: 14px;
@@ -756,6 +756,7 @@
 
 .pagination-button:disabled {
     background-color: #ccc;
+    padding: 5px 2rem 5px 2rem;
     cursor: not-allowed;
 }
 
@@ -765,7 +766,8 @@
 
 .pagination-button:hover:not(:disabled) {
     background-color: #e6a800;        /* Hover background color */
-    transform: scale(1.05);           /* Slight scale effect on hover */
+    transform: scale(1.05); 
+    padding: 5px 2rem 5px 2rem;          /* Slight scale effect on hover */
 }
 
 .pagination-info {
@@ -896,6 +898,7 @@
                 style="padding: 10px 20px; background: #ccc; color: black; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">Cancel</button>
         </div>
     </div>
+    
 
     <script>
         let currentPage = 1;
@@ -948,6 +951,7 @@ async function loadGhazals(page = 1) {
 
             // Append the ghazal item to the container
             ghazalsContainer.appendChild(ghazalItem);
+            
 
             // Add "Read More" functionality
             const readMoreBtn = ghazalItem.querySelector('.readMoreBtn');
@@ -1145,11 +1149,6 @@ function updatePaginationControls(page, totalGhazals) {
             margin: 0 auto;
 
         }
-
-        .ghazal-body {
-    white-space: pre-wrap; /* Preserve whitespace and line breaks */
-}
-
 
         #previewModal canvas {
             width: 100%;
