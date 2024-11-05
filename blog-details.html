@@ -558,44 +558,35 @@
                                     
                                     <script>
                                         async function fetchBlogDetails() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const blogId = urlParams.get('id'); // Get the blog ID from the query string
-
-    console.log('Blog ID:', blogId); // Log the blog ID
-
-    try {
-        const response = await fetch(`https://gas-backend-swck.vercel.app/api/blogs/details/${blogId}`);
-        console.log('Response:', response); // Log the response
-
-        const blog = await response.json();
-        
-        const blogDetailContainer = document.getElementById('container');
-
-        if (response.ok) {
-            // Format content to preserve whitespace and line breaks
-            const formattedContent = blog.content
-                .replace(/ {2,}/g, ' ') // Replace multiple spaces with a single space
-                .replace(/\n/g, '<br>'); // Replace newlines with <br>
-
-            // Construct the blog detail HTML
-            blogDetailContainer.innerHTML = `
-                <h1>${blog.title}</h1>
-                <p><strong>Published on:</strong> ${new Date(blog.date).toLocaleDateString()}</p>
-                <img src="data:image/jpeg;base64,${blog.image}" alt="${blog.title}" class="img-fluid">
-                <div>${formattedContent}</div>
-            `;
-        } else {
-            blogDetailContainer.innerHTML = `<p>${blog.message}</p>`; // Handle error message
-            console.log('Error data:', blog); // Log error data
-        }
-    } catch (error) {
-        console.error('Error fetching blog details:', error);
-    }
-}
-
-// Fetch blog details on page load
-document.addEventListener('DOMContentLoaded', fetchBlogDetails);
-
+                                            const urlParams = new URLSearchParams(window.location.search);
+                                            const blogId = urlParams.get('id'); // This will get the blog ID from the query string
+                                    
+                                            try {
+                                                const response = await fetch(`https://gas-backend-swck.vercel.app/api/blogs/details/${blogId}`);
+                                                const blog = await response.json();
+                                    
+                                                const blogDetailContainer = document.getElementById('container');
+                                    
+                                                if (response.ok) {
+                                                    // Format content to preserve whitespace and line breaks
+                                                    const formattedContent = blog.content
+                                                        .replace(/ {2,}/g, ' ') // Replace multiple spaces with a single space
+                                                        .replace(/\n/g, '<br>'); // Replace newlines with <br>
+                                    
+                                                    // Construct the blog detail HTML
+                                                    blogDetailContainer.innerHTML = `
+                                                        <h1>${blog.title}</h1>
+                                                        <p><strong>Published on:</strong> ${new Date(blog.date).toLocaleDateString()}</p>
+                                                        <img src="data:image/jpeg;base64,${blog.image}" alt="${blog.title}" class="img-fluid">
+                                                        <div>${formattedContent}</div>
+                                                    `;
+                                                } else {
+                                                    blogDetailContainer.innerHTML = `<p>${blog.message}</p>`;
+                                                }
+                                            } catch (error) {
+                                                console.error('Error fetching blog details:', error);
+                                            }
+                                        }
                                     
                                         // Fetch blog details on page load
                                         document.addEventListener('DOMContentLoaded', fetchBlogDetails);
