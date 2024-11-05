@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb( 33, 34, 40);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 100px;
+            font-size: 2srem;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #ffffffe8;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box i {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                width: 150px; /* Adjust width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body onload="checkAuth()"></body>
+
+    <h1>Welcome Gulam!</h1>
+    <div class="container">
+        <div class="box">
+            <i class="fas fa-pencil-alt"></i>
+            <a href="admin.html">Add Blog</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-book"></i>
+            <a href="poetry-management.html">Add Poetry</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-feather-alt"></i>
+            <a href="ghazal-management.html">Add Ghazals</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-pen-alt"></i>
+            <a href="inqlabi-poetry-management.html">Add Inqlabi Poetry</a>
+        </div>
+        <div class="box">
+            <i class="fa-regular fa-images"></i>
+            <a href="manage-gallery.html">Add Photos</a>
+        </div>
+    </div>
+
+    <script>
+          function checkAuth() {
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login-admin.html"; // Redirect to login if not authenticated
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login-admin.html"; // Redirect to login on logout
+        }
+    </script>
+<button onclick="logout()" id="logoutButton">Logout</button>
+
+<style>
+    #logoutButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #dc3545; /* Red color for logout */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #logoutButton:hover {
+        background-color: #c82333; /* Darker red for hover effect */
+        transform: scale(1.05); /* Slightly enlarge button on hover */
+    }
+
+    #logoutButton:active {
+        background-color: #bd2130; /* Even darker red when clicked */
+        transform: scale(1); /* Reset scale on click */
+    }
+</style>
+
+
+</body>
+</html>

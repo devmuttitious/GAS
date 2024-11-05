@@ -1,0 +1,28 @@
+.nilsbrown-header-dark {
+    background-color: #333; /* Adjust based on your design */
+    padding: 15px 0;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    max-width: 100%;
+}
+
+.nilsbrown-menu-burger-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nilsbrown-nav-toggle i {
+    background: #fff; /* Change color for the burger icon */
+    width: 30px;
+    height: 4px;
+    display: block;
+    margin: 5px 0;
+}
