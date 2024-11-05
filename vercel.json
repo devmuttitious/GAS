@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/Home",
+        "permanent": true
+      }
+    ]
+  }
+  
