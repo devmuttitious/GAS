@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Abbass Saghar - Political Analyst</title>
+    <title>Abbass Saghar - Poetry</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="alternate" type="application/rss+xml" title="GAS &raquo; Feed" href="./../../feed/index.html">
     <link rel="alternate" type="application/rss+xml" title="GAS &raquo; Comments Feed"
         href="./../../comments/feed/index.html">
-    <link rel="alternate" type="application/rss+xml" title="GAS &raquo; Biography Comments Feed"
-        href="./feed/index.html">
+    <link rel="alternate" type="application/rss+xml" title="GAS &raquo; Poet Comments Feed" href="./feed/index.html">
     <script type="text/javascript">
         /* <![CDATA[ */
         window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/", "svgExt": ".svg", "source": { "concatemoji": ".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2" } };
@@ -399,15 +398,45 @@
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../../xmlrpc.php?rsd">
     <meta name="generator" content="WordPress 6.6.2">
     <link rel="canonical" href="./index.html">
-    <link rel="shortlink" href="./../../index.html?p=78">
+    <link rel="shortlink" href="./../../index.html?p=79">
     <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"
-        href="./../../wp-json/oembed/1.0/embed/index.html?url=.%2F%2Fservices%2Fbiography%2F">
+        href="./../../wp-json/oembed/1.0/embed/index.html?url=.%2F%2Fservices%2Fpoetry%2F">
     <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed"
-        href="./../../wp-json/oembed/1.0/embed/index.html?url=.%2F%2Fservices%2Fbiography%2F#038;format=xml">
+        href="./../../wp-json/oembed/1.0/embed/index.html?url=.%2F%2Fservices%2Fpoetry%2F#038;format=xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <meta name="generator" content="Redux 4.4.18">
     <meta name="generator"
         content="Elementor 3.24.7; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
     <style>
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #47c15f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .share-dropdown.show {
+            display: block;
+        }
+
+
         .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
         .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
             background-image: none !important;
@@ -429,194 +458,340 @@
             }
         }
 
-        /* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        body {
+            background-color: #fff !important;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #5a5a5a;
+        }
+
+        .shayari {
+            padding: 15px 10px;
+            border-left: 4px solid #ccc91e;
+            background-color: #6a6a6a08;
+            border-radius: 1px;
+            text-align: center;
+            margin: 2rem 15%;
+            width: 70%;
+        }
+
+        /* Adjusting the font size and padding for smaller screens */
+        .shayari p em {
+            font-weight: 100;
+            font-size: 1.5rem;
+            color: #757575;
+            margin-bottom: 10px;
+            cursor: default;
+        }
+
+        .author {
+            font-size: .8rem;
+            font-weight: bold;
+            color: #525252;
+            text-align: end;
+            text-decoration: none;
+            cursor: default;
+
+        }
+
+        .actions {
+            text-align: center;
+            color: #757575;
+        }
+
+        .actions a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+
+        .actions i {
+            font-size: 1.3rem;
+            color: #3f3f3f;
+            margin: 0 5px;
+        }
+
+        .actions i:hover {
+            color: #000000;
+        }
+
+
+
+        /* Media Query for Tablets (max-width: 768px) */
+        @media (max-width: 768px) {
+            .shayari {
+                padding: 15px 50px;
+                /* Reducing horizontal padding */
+            }
+
+            .shayari p em {
+                font-size: 1.2rem;
+                /* Reducing font size for smaller screens */
+            }
+
+            .author {
+                font-size: 0.9rem;
+                /* Slightly smaller font for author name */
+            }
+
+            .actions {
+                text-align: center;
+                /* Center align for better mobile UX */
+            }
+
+            .actions a {
+                font-size: 0.8rem;
+                /* Smaller font size */
+                margin-left: 5px;
+            }
+
+            .actions i {
+                font-size: 1rem;
+                /* Smaller icons */
+            }
+        }
+
+        /* Media Query for Mobile Devices (max-width: 480px) */
+        @media (max-width: 480px) {
+            .shayari {
+
+                padding: 15px 20px;
+                /* Minimal padding for small mobile devices */
+                margin: 2rem 14%;
+            }
+
+            .shayari p em {
+                font-size: .8rem;
+                /* Smaller font size for mobile */
+            }
+
+            .author {
+                font-size: 0.5rem;
+                /* Adjust author text size for smaller screens */
+            }
+
+            .actions {
+                text-align: center;
+                /* Ensure proper alignment for mobile */
+            }
+
+            .actions a {
+                font-size: 0.7rem;
+                /* Further reduce text size */
+                margin-left: 3px;
+                /* Narrower spacing */
+            }
+
+            .actions i {
+                font-size: 0.8rem;
+                /* Smaller icon size for mobile */
+            }
+        }
+
+
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Full viewport height */
+            background-image: url('/assets/poet-banner.jpg');
+            /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin: -9rem 0;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Dropdown Styling */
+        .share-dropdown {
+            display: none;
+            position: relative;
+            left: 0;
+            top: 100%;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 20px;
+            z-index: 100;
+            width: 140px;
+        }
+
+
+
+        .share-dropdown a i {
+            font-size: 1.1rem;
+            color: #3f3f3f;
+
+        }
+
+        .share-dropdown a i:hover {
+            color: #000000;
+        }
+
+        .share-dropdown a:hover {
+            color: #000000;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .pagination-button {
+    background-color: #fcb900;        /* Button background color */
+    color: #fff;                      /* Icon color */
+    border: none;
+    padding: 5px 2rem 5px 2rem;
+    margin: 10px 50px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.mil-p-120-90 {
-  padding: 120px 90px;
+.pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    padding: 5px 2rem 5px 2rem;
 }
 
-/* Heading */
-h5 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ff007b;
+.pagination-button i {
+    pointer-events: none;
 }
 
-/* Text Styling */
-.mil-text-xl {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #ddd;
+.pagination-button:hover:not(:disabled) {
+    background-color: #e6a800;        /* Hover background color */
+    transform: scale(1.05);           /* Slight scale effect on hover */
+    padding: 5px 2rem 5px 2rem;
 }
 
-.mil-dark {
-  color: #bababa; /* Accent color */
+.pagination-info {
+    font-size: 16px;
+    margin: 0 10px;
+    color: #949494;  /* Text color */
 }
 
-/* Info Section */
-.mil-info div {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.mil-info span {
-  font-weight: bold;
-}
-
-/* Blockquote Styling */
-blockquote {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: #ccc;
-  border-left: 4px solid #ffd900;
-  padding-left: 20px;
-  margin: 20px 0;
-}
-
-/* Image Frame Styling */
-.mil-image-frame {
-  width: 100%; 
-  height: 120vh; 
-  position: relative; 
-  overflow: hidden; 
-  border-radius: 10px; 
-  margin-bottom: 30px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
-
-.mil-horizontal img {
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover; /* Ensures the image covers the container */
-  transition: transform 0.5s ease-in-out;
-}
-
-
-
-.mil-horizontal:hover img {
-  transform: scale(1.1);
-}
-
-.mil-up {
-  animation: fadeInUp 1s ease;
-}
-
-.mil-mb-60 {
-  margin-bottom: 60px;
-}
-
-.mil-mb-90 {
-  margin-bottom: 90px;
-}
-
-/* Responsive Grid */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-lg-12,
-.col-lg-8,
-.col-lg-6 {
-  padding: 15px;
-}
-
-/* Full Width on Large Screens */
-.col-lg-12 {
-  width: 100%;
-}
-
-.col-lg-8 {
-  width: 66.6667%;
-}
-
-.col-lg-6 {
-  width: 50%;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 991px) {
-  .col-lg-8 {
-    width: 100%;
-  }
-
-  .mil-p-120-90 {
-    padding: 60px 30px;
-  }
-}
-
+/* Responsive styling for smaller devices */
 @media (max-width: 768px) {
-  .mil-text-xl {
-    font-size: 1.1rem;
-  }
+    .pagination-button {
+        padding: 4px 8px;
+        margin: 8px 3px;
+        font-size: 12px;
+    }
 
-  h5 {
-    font-size: 1.3rem;
-  }
-
-  blockquote {
-    font-size: 1.1rem;
-  }
-
-  .mil-p-120-90 {
-    padding: 40px 20px;
-  }
+    .pagination-info {
+        font-size: 14px;
+        margin: 0 5px;
+    }
 }
 
-@media (max-width: 576px) {
-  .mil-mb-60 {
-    margin-bottom: 30px;
-  }
+@media (max-width: 480px) {
+    .pagination-button {
+        padding: 3px 6px;
+        margin: 5px 2px;
+        font-size: 10px;
+    }
 
-  blockquote {
-    margin: 10px 0;
-  }
+    .pagination-info {
+        font-size: 12px;
+        margin: 0 3px;
+    }
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
     </style>
     <style type="text/css" id="custom-background-css">
         body.custom-background {
             background-color: #000000;
         }
     </style>
+    
+    <link rel="icon" href="/assets/logo/logo-1.png"
+        sizes="32x32">
+    <link rel="icon" href="/assets/logo/logo-1.png"
 
-<link rel="icon" href="/assets/logo/logo-1.png"
-sizes="32x32">
-<link rel="icon" href="/assets/logo/logo-1.png"
-
-<link rel="apple-touch-icon"
+    <link rel="apple-touch-icon"
         href="./../../wp-content/uploads/2024/10/Screenshot_2024-10-17_021431-removebg-preview.png">
     <meta name="msapplication-TileImage"
         content="./../../wp-content/uploads/2024/10/Screenshot_2024-10-17_021431-removebg-preview.png">
     <style type="text/css" id="wp-custom-css">
-        body.dark .nilsbrown-header-dark .logo img {
-            display: none;
-            /* Hides the logo image in dark mode */
-        }
+
     </style>
 
 </head>
 
 <body
-    class="services-template-default single single-services postid-78 custom-background wp-custom-logo  dark elementor-default elementor-kit-9">
+    class="services-template-default single single-services postid-79 custom-background wp-custom-logo  dark elementor-default elementor-kit-9">
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -640,23 +815,22 @@ sizes="32x32">
                             title="" class=" nav-link" href="#">Menu</a></li>
                     <li id="menu-item-103"
                         class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-103"><a
-                            title="Home" class=" nav-link" href="/index.html">Home</a></li>
+                            title="Home" class=" nav-link" href="Home.html">Home</a></li>
                 <li id="menu-item-103"
                     class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-103"><a
-                        title="Blog" class=" nav-link" href="/blogs.html">Blog</a></li>
+                        title="Blog" class=" nav-link" href="Blogs.html">Blogs</a></li>
                 <li id="menu-item-96"
                     class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-96"><a
-                        title="Ghazal &amp; Poetry" class=" nav-link" href="/ghazal/index.html">Ghazal &#038;
-                        Poetry</a></li>
+                        title="Ghazal &amp; Poetry" class=" nav-link" href="Ghazals.html">Ghazal</a></li>
                 <li id="menu-item-793"
                     class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-793"><a
-                        title="Poetry" class=" nav-link" href="/services/poetry/index.html">Poetry</a></li>
+                        title="Poetry" class=" nav-link" href="Poetry.html">Poetry</a></li>
                 <li id="menu-item-793"
                     class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-793"><a
-                        title="Poetry" class=" nav-link" href="/gallery.html">Gallery</a></li>
+                        title="Poetry" class=" nav-link" href="Gallery.html">Gallery</a></li>
                 <li id="menu-item-95"
                     class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-95"><a
-                        title="Contact" class=" nav-link" href="/contactUs.html">Contact</a></li>
+                        title="Contact" class=" nav-link" href="Contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -667,9 +841,7 @@ sizes="32x32">
                 <!-- Logo -->
                 <div class="col-8 col-md-8">
                     <div class="logo-wrap">
-                        <a href="./../../index.html" class="logo"> <img
-                                src="/assets/logo/logo-1.png"
-                                alt=""> </a>
+                        <a href="Home.html" class="logo"> <img src="/assets/logo/logo-1.png" alt=""> </a>
                     </div>
                 </div>
 
@@ -680,56 +852,307 @@ sizes="32x32">
             </div>
         </div>
     </header>
-    <section class="section-padding services-page">
-        <div class="container">
-            <div class="row mb-45">
-                <div class="col-md-12 text-center">
-                    <h6 class="wow" data-splitting> Ghulam Abbass Saghar </h6>
-                    <h1 class="wow" data-splitting>Political Life</h1>
-                </div>
-            </div>
-            <section id="biography"> 
-                <div class="container mil-p-120-90">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12">
-
-                            <div class="mil-image-frame mil-horizontal mil-up">
-                                <img src="/assets/profile/political-life.png" alt="Publication cover" class="mil-scale" data-value-1=".90" data-value-2="1.15">
-                            </div>
-
-                        </div>
-
-                            <p class="mil-text-xl mil-dark mil-up mil-mb-60">As a political analyst, Ghulam Abbass Saghar offers critical insights into Pakistan’s political landscape. He examines government actions and societal movements, providing informed perspectives on key issues. With a focus on transparency and accountability, he educates the public and fosters informed discourse. His analyses aim to empower citizens through knowledge. Saghar’s work positions him as a vital voice in the discourse surrounding democracy and civil rights in Pakistan.</p>
-
-                            <blockquote class="mil-up mil-mb-60">""As a political analyst, one must view the landscape not through the lens of ideology, but through the clarity of facts, patterns, and public sentiment. The essence of political analysis lies in dissecting the motives of power, understanding the underlying forces that drive decisions, and predicting how these decisions will shape the future. In a world where narratives often overshadow reality, the task is to sift through noise, deciphering the truth from the rhetoric, and offering insights that empower the public with clarity."</blockquote>                            
-
-                                    <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                        <img src="/assets/profile/pl-1 (1).png" alt="Publication cover">
-                                    </div>
-
-                                    <div class="mil-image-frame mil-horizontal mil-up mil-mb-60">
-                                        <img src="/assets/profile/pl-2.png" alt="Publication cover">
-                                    </div>
-
-                            <blockquote class="mil-up mil-mb-60">
-                                Long March 2012 <br>
-                                Long March 2014 <br>
-                                Anti-Terrorism Camp <br>
-                                Faisalabad Public Gathering 2014 <br>
-                                Lahore Public Gathering 2014 <br>
-                                Lahore Clash 2014 <br>
-                                The Day of Martyrs <br>
-                                Launch of the Anti-Terror Curriculum                            </blockquote>
-
-                            <p class="mil-up mil-mb-30">He examines government actions and societal movements, empowering citizens through informed discourse and advocating for transparency and accountability. His work is a vital contribution to the discourse on democracy and civil rights.</p>
-
-
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 style="color: #fff;">Poetry - شاعری</h1>
         </div>
     </section>
+
+    <section class="section-padding services-page">
+        <div class="container poet-container">
+            <h1 style="font-size: 1.5rem; margin: 6rem 0; color: #484848;">Today's Top  Urdu Shayari</h1>
+        
+            <!-- Shayari List Container -->
+            <div id="shayariContainer"></div>
+            
+            <!-- Pagination Controls -->
+            <div id="pagination-container" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;"></div>
+            
+            <!-- Preview Modal -->
+            <div id="previewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); align-items: center; justify-content: center; z-index: 999;">
+                <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center;">
+                    <canvas id="previewCanvas" width="600" height="400" style="border: 1px solid #ddd;"></canvas>
+                    <br><br>
+                    <button id="finalDownloadButton" style="padding: 10px 15px; background: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">Download</button>
+                    <button id="cancelButton" style="padding: 10px 20px; background: #ccc; color: black; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">Cancel</button>
+                </div>
+            </div>
+        </div>
+        
+            <style>
+                /* Additional responsive styling for the preview modal */
+                #previewModal div {
+                    max-width: 600px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+
+                #previewCanvas {
+                    width: 100%;
+                    height: auto;
+                }
+
+                /* Mobile-specific styling */
+                @media (max-width: 768px) {
+                    #previewModal div {
+                        padding: 15px;
+                    }
+
+                    #finalDownloadButton,
+                    #cancelButton {
+                        width: 100%;
+                        margin: 10px 0;
+                    }
+                }
+            </style>
+            <script>
+               let currentPage = 1;
+const shayariPerPage = 10;
+
+async function fetchShayari(page = 1) {
+    try {
+        const response = await fetch('https://gas-backend-swck.vercel.app/api/poetry'); // Ensure this matches your backend route
+        // const response = await fetch('http://localhost:3000/api/poetry'); // Ensure this matches your backend route
+        const shayariList = await response.json();
+        const container = document.getElementById('shayariContainer');
+
+        // Calculate the start and end indices for pagination
+        const startIndex = (page - 1) * shayariPerPage;
+        const endIndex = startIndex + shayariPerPage;
+        const paginatedShayari = shayariList.slice(startIndex, endIndex);
+
+        // Clear the container before adding new entries
+        container.innerHTML = '';
+
+        // Display paginated shayari
+        paginatedShayari.forEach(shayari => {
+            const shayariDiv = document.createElement('div');
+            shayariDiv.classList.add('shayari');
+
+            // Preserve whitespace and format line breaks
+            const formattedText = shayari.text
+                .replace(/ {2,}/g, ' ') // Replace multiple spaces with a single space
+                .replace(/\n/g, '<br>'); // Replace newlines with <br>
+
+            shayariDiv.innerHTML = `
+                <p><em>${formattedText}</em></p>
+                <div class="author">— ${shayari.author}</div>
+                <div class="actions">
+                    <a href="#" class="copyButton" data-content="${shayari.text}"><i class="fas fa-copy"></i></a>
+                    <a href="#" class="downloadButton" data-content="${shayari.text}"><i class="fas fa-download"></i></a>
+                    <a href="#" class="shareButton" data-content="${shayari.text}"><i class="fas fa-share-alt"></i></a>
+                    <div class="share-dropdown" style="display: none;">
+                        <a href="#" style="color: #3f3f3f;" id="twitterShare"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #3f3f3f;" id="whatsappShare"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" style="color: #3f3f3f;" id="facebookShare"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            `;
+            container.appendChild(shayariDiv);
+        });
+
+        addEventListeners();
+        updatePaginationControls(page, shayariList.length);
+    } catch (error) {
+        console.error('Error fetching shayari:', error);
+    }
+}
+
+function updatePaginationControls(page, totalShayari) {
+    const paginationContainer = document.getElementById('pagination-container');
+    const totalPages = Math.ceil(totalShayari / shayariPerPage);
+
+    paginationContainer.innerHTML = '';
+
+    // Previous button
+    const prevButton = document.createElement('button');
+    prevButton.className = 'pagination-button';
+    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prevButton.disabled = page === 1;
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            fetchShayari(currentPage);
+        }
+    });
+    paginationContainer.appendChild(prevButton);
+
+    // Page info
+    const pageInfo = document.createElement('span');
+    pageInfo.className = 'pagination-info';
+    pageInfo.textContent = `Page ${page} of ${totalPages}`;
+    paginationContainer.appendChild(pageInfo);
+
+    // Next button
+    const nextButton = document.createElement('button');
+    nextButton.className = 'pagination-button';
+    nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    nextButton.disabled = page === totalPages;
+    nextButton.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            fetchShayari(currentPage);
+        }
+    });
+    paginationContainer.appendChild(nextButton);
+}
+
+                function addEventListeners() {
+                    document.querySelectorAll('.shayari').forEach((shayariSection) => {
+                        const copyButton = shayariSection.querySelector('.copyButton');
+                        const downloadButton = shayariSection.querySelector('.downloadButton');
+                        const shareButton = shayariSection.querySelector('.shareButton');
+                        const shareDropdown = shayariSection.querySelector('.share-dropdown'); // Corrected class name
+                        const shayariText = shayariSection.querySelector('p').innerText;
+
+                        if (copyButton) {
+                            copyButton.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                navigator.clipboard.writeText(shayariText).then(() => {
+                                    showNotification("Copied to clipboard!");
+                                });
+                            });
+                        }
+
+                        // Event listener for the initial download button (shows preview)
+                        downloadButton.addEventListener('click', (e) => {
+                            e.preventDefault();
+
+                            // Create a canvas and context for drawing the poetry image
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            canvas.width = 600;
+                            canvas.height = 400;
+
+                            const backgroundImage = new Image();
+                            backgroundImage.src = '/assets/poet-bg.png';
+
+                            // Load and draw the background image
+                            backgroundImage.onload = () => {
+                                context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+
+                                // Set text properties
+                                context.font = '20px Arial';
+                                context.fillStyle = '#000000';
+                                context.textAlign = 'center';
+                                context.textBaseline = 'middle';
+
+                                // Draw poetry text on canvas, centered
+                                const lines = shayariText.split('\n');
+                                const lineHeight = 30;
+                                const totalTextHeight = lines.length * lineHeight;
+                                const startY = (canvas.height - totalTextHeight) / 2;
+
+                                lines.forEach((line, index) => {
+                                    context.fillText(line, canvas.width / 2, startY + index * lineHeight);
+                                });
+
+                                // Copy canvas content to preview canvas
+                                const previewCanvas = document.getElementById('previewCanvas');
+                                const previewContext = previewCanvas.getContext('2d');
+                                previewContext.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+                                previewContext.drawImage(canvas, 0, 0);
+
+                                // Show the preview modal
+                                document.getElementById('previewModal').style.display = 'flex';
+                            };
+
+                            // Error handling for image load failure
+                            backgroundImage.onerror = () => {
+                                console.error("Failed to load the background image.");
+                                showNotification("Image download failed. Check the background image path.");
+                            };
+                        });
+
+                        // Cancel button event listener to close preview modal
+                        document.getElementById('cancelButton').addEventListener('click', closePreview);
+
+                        // Final download button event listener for actual download (downloads only once)
+                        document.getElementById('finalDownloadButton').addEventListener('click', () => {
+                            const previewCanvas = document.getElementById('previewCanvas');
+                            const finalDownloadButton = document.getElementById('finalDownloadButton');
+
+                            // Disable button temporarily to prevent multiple downloads
+                            if (!finalDownloadButton.disabled) {
+                                finalDownloadButton.disabled = true;
+
+                                // Create blob and trigger download
+                                previewCanvas.toBlob((blob) => {
+                                    const a = document.createElement('a');
+                                    a.href = URL.createObjectURL(blob);
+                                    a.download = "shayari_image.png";
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                    showNotification("Poetry downloaded with background image!");
+
+                                    // Re-enable the download button after a short delay to allow future downloads
+                                    setTimeout(() => {
+                                        finalDownloadButton.disabled = false;
+                                    }, 1000);
+                                }, 'image/png');
+
+                                closePreview();
+                            }
+                        });
+
+                        // Function to close the preview modal
+                        function closePreview() {
+                            document.getElementById('previewModal').style.display = 'none';
+                        }
+
+
+                        // Function to close the preview modal
+                        function closePreview() {
+                            document.getElementById('previewModal').style.display = 'none';
+                        }
+
+                        if (shareButton && shareDropdown) {
+                            shareButton.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                shareDropdown.classList.toggle('show');
+                            });
+
+                            shareDropdown.querySelectorAll('a').forEach((platformLink) => {
+                                platformLink.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    const platform = platformLink.id;
+                                    const url = encodeURIComponent(document.location.href);
+                                    const text = encodeURIComponent(shayariText);
+
+                                    let shareUrl = '';
+                                    if (platform === 'twitterShare') {
+                                        shareUrl = `https://twitter.com/share?url=${url}&text=${text}`;
+                                    } else if (platform === 'whatsappShare') {
+                                        shareUrl = `https://wa.me/?text=${text} ${url}`;
+                                    } else if (platform === 'facebookShare') {
+                                        shareUrl = `https://www.facebook.com/sharer.php?u=${url}`;
+                                    }
+                                    window.open(shareUrl, '_blank');
+                                    showNotification("Shared on " + platform.replace('Share', ''));
+                                });
+                            });
+                        }
+                    });
+                }
+
+                function showNotification(message) {
+                    const notification = document.createElement('div');
+                    notification.className = 'notification';
+                    notification.innerText = message;
+                    document.body.appendChild(notification);
+
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 2000);
+                }
+
+                fetchShayari();
+            </script>
+        </div>
+    </section>
+
+
     <!-- Other Services -->
 
     <!-- Testiominals -->
@@ -956,6 +1379,85 @@ sizes="32x32">
         id="wow-js"></script>
     <script type="text/javascript" src="./../../wp-content/themes/nils/js/custom.js?ver=6.6.2"
         id="nils-custom-js"></script>
+
+    <script>
+        document.querySelectorAll('.shayari').forEach((shayariSection) => {
+            const copyButton = shayariSection.querySelector('.copyButton'); // Updated selector
+            const downloadButton = shayariSection.querySelector('.downloadButton'); // Updated selector
+            const shareButton = shayariSection.querySelector('.shareButton'); // Updated selector
+            const shareDropdown = shayariSection.querySelector('.shareDropdown'); // Updated selector
+            const shayariText = shayariSection.querySelector('p').innerText;
+
+            // Check if the buttons exist before adding event listeners
+            if (copyButton) {
+                // Copy to clipboard
+                copyButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText(shayariText).then(() => {
+                        showNotification("Copied to clipboard!");
+                    });
+                });
+            }
+
+            if (downloadButton) {
+                // Download as text file
+                downloadButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const blob = new Blob([shayariText], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = "shayari.txt";
+                    document.body.appendChild(a); // Append to body for Firefox
+                    a.click();
+                    document.body.removeChild(a); // Clean up
+                    URL.revokeObjectURL(url);
+                    showNotification("Downloaded!");
+                });
+            }
+
+            if (shareButton && shareDropdown) {
+                // Toggle social media share dropdown
+                shareButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    shareDropdown.classList.toggle('show');
+                });
+
+                // Share on social media
+                shareDropdown.querySelectorAll('a').forEach((platformLink) => {
+                    platformLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const platform = platformLink.id;
+                        const url = encodeURIComponent(document.location.href);
+                        const text = encodeURIComponent(shayariText);
+
+                        let shareUrl = '';
+                        if (platform === 'twitterShare') {
+                            shareUrl = `https://twitter.com/share?url=${url}&text=${text}`;
+                        } else if (platform === 'whatsappShare') {
+                            shareUrl = `https://wa.me/?text=${text} ${url}`;
+                        } else if (platform === 'facebookShare') {
+                            shareUrl = `https://www.facebook.com/sharer.php?u=${url}`;
+                        }
+                        window.open(shareUrl, '_blank');
+                        showNotification("Shared on " + platform.replace('Share', ''));
+                    });
+                });
+            }
+        });
+
+        // Notification display
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerText = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 2000); // Removes after 2 seconds
+        }
+    </script>
 
 </body>
 
